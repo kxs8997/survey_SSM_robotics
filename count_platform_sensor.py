@@ -27,6 +27,7 @@ plt.xlabel('Platform')
 plt.ylabel('Count of Papers')
 plt.xticks(rotation=45)
 plt.grid(axis='y')
+plt.savefig("platform_count.png", format='png', dpi=300)
 plt.show()
 
 # Plot the histogram of sensor counts
@@ -37,4 +38,5 @@ plt.xlabel('Sensor')
 plt.ylabel('Count of Papers')
 plt.xticks(rotation=45)
 plt.grid(axis='y')
+plt.savefig("sensor_count.png", format='png', dpi=300)
 plt.show()

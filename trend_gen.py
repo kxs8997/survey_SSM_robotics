@@ -42,6 +42,7 @@ plt.ylabel('Total Usage')
 plt.xticks(time_trend_adjusted.index, rotation=45)
 plt.legend(title='Platforms', loc='upper left')
 plt.grid(True)
+plt.savefig("platform_trend_analysis.png", format='png', dpi=300)
 plt.show()
 
 # Plot sensor trends
@@ -55,4 +56,5 @@ plt.ylabel('Total Usage')
 plt.xticks(time_trend_adjusted.index, rotation=45)
 plt.legend(title='Sensors', loc='upper left')
 plt.grid(True)
+plt.savefig("sensor_trend_analysis.png", format='png', dpi=300)
 plt.show()
