@@ -12,7 +12,7 @@ platforms = ['PC_Combined', 'EMBEDDEDLIN', 'BAREMETAL']
 sensors = ['1DTOF', '3DTOF', 'LiDAR', 'RADAR', 'MONOVISION', 'STEREOVISION']
 
 # Filter valid years (non-zero years)
-valid_data = df[df['Publication Year'] > 0]
+valid_data = df[df['Publication Year'] > 2021]
 
 # Extract relevant columns (platforms and sensors)
 platform_sensor_data = valid_data[platforms + sensors].fillna(0)
