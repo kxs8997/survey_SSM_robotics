@@ -11,6 +11,10 @@ df['PC_Combined'] = df['PC'].fillna(0) + df['PC_ASSUME'].fillna(0)
 platforms = ['PC_Combined', 'EMBEDDEDLIN', 'BAREMETAL']
 sensors = ['1DTOF', '3DTOF', 'LiDAR', 'RADAR', 'MONOVISION', 'STEREOVISION']
 
+# Define the display names for platforms and sensors
+platform_display = ['PC_Combined', 'Embedded', 'Baremetal']
+sensor_display = ['1DTOF', '3DTOF', 'LiDAR', 'Radar', 'Monovision', 'Stereovision']
+
 # Filter valid years (non-zero years)
 valid_data = df[df['Publication Year'] > 2021]
 
@@ -22,6 +26,10 @@ platform_sensor_correlation = platform_sensor_data.corr()
 
 # Extract only platform-sensor correlations
 platform_sensor_correlation_matrix = platform_sensor_correlation.loc[platforms, sensors]
+
+# Rename rows and columns for display
+platform_sensor_correlation_matrix.index = platform_display
+platform_sensor_correlation_matrix.columns = sensor_display
 
 # Display the correlation matrix
 print("Platform-Sensor Correlation Matrix:")
