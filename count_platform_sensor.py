@@ -39,6 +39,7 @@ plt.xlabel('Platforms')
 plt.ylabel('Count of Papers')
 plt.xticks(rotation=45)
 plt.grid(axis='y')
+plt.tight_layout()  # Adjust layout to prevent cutoff
 plt.savefig("platform_count.png", format='png', dpi=300)
 plt.show()
 
@@ -50,5 +51,6 @@ plt.xlabel('Sensors')
 plt.ylabel('Count of Papers')
 plt.xticks(rotation=45)
 plt.grid(axis='y')
+plt.tight_layout()  # Adjust layout to prevent cutoff
 plt.savefig("sensor_count.png", format='png', dpi=300)
 plt.show()
