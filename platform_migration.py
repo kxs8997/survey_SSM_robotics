@@ -14,7 +14,7 @@ platforms = ['PC_Combined', 'EMBEDDEDLIN', 'BAREMETAL']
 display_labels = ['PC_Combined', 'Embedded', 'Baremetal']
 
 # Filter valid years (non-zero years)
-valid_data = df[df['Publication Year'] > 0]
+valid_data = df[df['Publication Year'] > 2007]
 
 # Group by 'Publication Year' and sum platform usage
 platform_trends = valid_data.groupby('Publication Year')[platforms].sum()

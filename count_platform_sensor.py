@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np  # Import NumPy for range generation
 
 # Load the Excel file
 file_path = "SSM_Perception_scratch.xlsx"  # Replace with your actual file path
@@ -21,7 +22,7 @@ platform_mapping = dict(zip(platforms_original, platforms_display))
 sensor_mapping = dict(zip(sensors_original, sensors_display))
 
 # Filter valid years (non-zero years)
-valid_data = df[df['Publication Year'] > 0]
+valid_data = df[df['Publication Year'] > 2007]
 
 # Count the number of papers using each platform and sensor
 platform_counts = (valid_data[platforms_original] > 0).sum()
@@ -51,6 +52,10 @@ plt.xlabel('Sensors')
 plt.ylabel('Count of Papers')
 plt.xticks(rotation=45)
 plt.grid(axis='y')
+
+# Ensure y-axis ticks are integer values
+plt.yticks(np.arange(0, sensor_counts.max() + 1, 1))
+
 plt.tight_layout()  # Adjust layout to prevent cutoff
 plt.savefig("sensor_count.png", format='png', dpi=300)
 plt.show()

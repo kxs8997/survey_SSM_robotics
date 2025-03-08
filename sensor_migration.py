@@ -12,7 +12,7 @@ sensors = ['1DTOF', '3DTOF', 'LiDAR', 'RADAR', 'MONOVISION', 'STEREOVISION']
 display_labels = ['1DTOF', '3DTOF', 'LiDAR', 'Radar', 'Monovision', 'Stereovision']
 
 # Filter valid years (non-zero years)
-valid_data = df[df['Publication Year'] > 0]
+valid_data = df[df['Publication Year'] > 2007]
 
 # Group by 'Publication Year' and sum sensor usage
 sensor_trends = valid_data.groupby('Publication Year')[sensors].sum()
