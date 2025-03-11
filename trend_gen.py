@@ -31,10 +31,7 @@ time_range_2008_2010 = time_trend.loc[2008:2010].sum()
 time_trend_adjusted = time_trend.drop(time_trend.index[(time_trend.index >= 2008) & (time_trend.index <= 2010)])
 time_trend_adjusted.loc[2008] = time_range_2008_2010
 
-# Combine 2023-2024 into a single point
-time_range_2023_2024 = time_trend.loc[2023:2024].sum()
-time_trend_adjusted = time_trend_adjusted.drop(time_trend_adjusted.index[(time_trend_adjusted.index >= 2023)])
-time_trend_adjusted.loc[2024] = time_range_2023_2024
+# Ensure 2023 and 2024 remain separate (no aggregation)
 
 # Sort the index for proper plotting
 time_trend_adjusted = time_trend_adjusted.sort_index()
@@ -44,7 +41,7 @@ plt.figure(figsize=(15, 8))
 for platform in platforms_original:
     plt.plot(time_trend_adjusted.index, time_trend_adjusted[platform], marker='o', label=platform_mapping[platform])
 
-plt.title('Platform Usage Trends Over Time (2008-2010 and 2023-2024 Combined)')
+plt.title('Platform Usage Trends Over Time (2008-2010 Combined)')
 plt.xlabel('Publication Year')
 plt.ylabel('Total Usage')
 plt.xticks(time_trend_adjusted.index, rotation=45)
@@ -58,7 +55,7 @@ plt.figure(figsize=(15, 8))
 for sensor in sensors_original:
     plt.plot(time_trend_adjusted.index, time_trend_adjusted[sensor], marker='o', label=sensor_mapping[sensor])
 
-plt.title('Sensor Usage Trends Over Time (2008-2010 and 2023-2024 Combined)')
+plt.title('Sensor Usage Trends Over Time (2008-2010 Combined)')
 plt.xlabel('Publication Year')
 plt.ylabel('Total Usage')
 plt.xticks(time_trend_adjusted.index, rotation=45)
