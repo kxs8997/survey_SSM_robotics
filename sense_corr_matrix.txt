@@ -1,5 +1,5 @@
 Platform-Sensor Correlation Matrix:
-                1DTOF     3DTOF     LiDAR     Radar  Monovision  Stereovision
-PC_Combined -0.120020  0.436436  0.298807  0.298807    0.044821      0.496292
-Embedded    -0.113592  0.208253 -0.077771 -0.077771    0.362933     -0.129171
-Baremetal    0.879394 -0.151620 -0.103807 -0.103807    0.249136     -0.172414
+                1DTOF    3DTOF     LiDAR     Radar  Monovision  Stereovision
+PC_Combined -0.118832  0.21541  0.343303  0.276385   -0.052016      0.507752
+Embedded    -0.133511  0.47194 -0.113961 -0.091747    0.463440     -0.168550
+Baremetal    0.881176 -0.16855 -0.113961 -0.091747    0.174740     -0.168550
